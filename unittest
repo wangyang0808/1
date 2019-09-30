@@ -1,37 +1,48 @@
 # -*- coding: utf-8 -*-
 """
-Spyder Editor
+Created on Sun Sep 29 20:52:27 2019
 
-This is a temporary script file.
+@author: yang wang
 """
-### author:yang wang homework 4
-### it is a number guess game 
-import random as R
-number=R.randint(1,20)
-name=input('Hello! What is your name?')
-print('well',name, 'I am thinking of a number between 1 and 20.')
-count=0
-def guess_function():#def guess 
-    try:
-        number_guess=int(input('Take a guess. '))
-        number_guess>0 and number_guess<20
-        if number_guess>number:
-            print('Your guess is too high.')
-            return 1
-        elif number_guess<number:
-            print('Your guess is too low.')
-            return -1
-            print('Your guess is too low.')
-        elif number_guess==number:
-            print('Good job,',name,'You guessed my number in',count-1, 'guesses!' )
-            return 0
-    except:
-        print('valid')
-times=[1,2,3,4,5,6]#for cycle 
-for count in times :
-    count= count+1
-    guess_function
-    if guess_function()==0:
-            break
-    elif count==7:
-            print('The number I was thinking of was',number)
+
+# test_1111.py
+import test_my
+import unittest
+ 
+class TestAdd(unittest.TestCase):
+    """
+    Test the add function from the 1111 library
+    """
+ 
+    def test_add_integers(self):
+        """
+        Test that the addition of two integers returns the correct total
+        """
+        result = test_my.add(3, 5)
+        self.assertEqual(result, 8)
+ 
+    def test_add_floats(self):
+        """
+        Test that the addition of two floats returns the correct result
+        """
+        result = test_my.add(10.5, 3)
+        self.assertEqual(result, 13.5)
+
+ 
+ 
+if __name__ == '__main__':
+    unittest.main()
+    def add(a, b):
+    return a + b
+ 
+ 
+def subtract(a, b):
+    return a - b
+ 
+ 
+def multiply(a, b):
+    return a * b
+ 
+ 
+def divide(numerator, denominator):
+    return float(numerator) / denominator
